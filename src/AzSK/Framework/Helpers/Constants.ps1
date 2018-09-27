@@ -102,6 +102,10 @@ class Constants
 	static [string] $NewStorageKind = "BlobStorage";
 	static [string] $ARMControlsFileURI = "https://azsdkossep.azureedge.net/1.0.0/ARMControls.json";
 	static [string] $RecommendationURI = "https://azsdkossep.azureedge.net/recmnds/r.json ";
+<<<<<<< HEAD
+=======
+	static [string] $AttestationReadMsg = "`r`nControl results may not reflect attestation if you do not have permissions to read attestation data from "
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 	#V1 alert RG name constant is temporary and added for backward compatibility	
 	static [string] $AlertActionGroupName = "AzSKAlertActionGroup"
 	static [string] $CriticalAlertActionGroupName = "AzSKCriticalAlertActionGroup"

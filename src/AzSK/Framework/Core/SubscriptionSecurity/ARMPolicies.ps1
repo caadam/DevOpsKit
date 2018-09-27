@@ -7,6 +7,10 @@ class ARMPolicy: CommandBase
 	hidden [ARMPolicyModel] $ARMPolicyObj = $null;
 	hidden [PolicyInitiative] $SubPolicyInitiative = $null;
 	hidden [bool] $UpdateInitiative = $false;
+<<<<<<< HEAD
+=======
+	static [string] $PolicyProviderNamespace = "Microsoft.PolicyInsights";
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 	
 	hidden [PSObject[]] $ApplicableARMPolicies = $null;
 	#hidden [PSObject[]] $PolicyAssignments = $null;
@@ -49,6 +53,10 @@ class ARMPolicy: CommandBase
 						}
 					}
 			}
+			else
+			{
+				$this.ApplicableARMPolicies += $this.ARMPolicyObj.Policies
+			}
 		}
 			
 		return $this.ApplicableARMPolicies;
@@ -56,7 +64,11 @@ class ARMPolicy: CommandBase
 
 	[MessageData[]] SetARMPolicies()
     {
+<<<<<<< HEAD
 		
+=======
+		[Helpers]::RegisterResourceProviderIfNotRegistered([ARMPolicy]::PolicyProviderNamespace);
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 		[MessageData[]] $messages = @();
 		$this.RemoveDeprecatedPolicies();
 		if(($this.ARMPolicyObj.Policies | Measure-Object).Count -ne 0)
@@ -428,7 +440,11 @@ class ARMPolicy: CommandBase
 					}
 					catch
 					{
+<<<<<<< HEAD
 						#eat this exception as erroraction is not working
+=======
+						#eat this exception as error action is not working
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 					}
 					$assignmentName = $initiativeName + "-assignment"
 					$assignmentDisplayName = $this.SubPolicyInitiative.DisplayName + " assignment"
@@ -463,7 +479,11 @@ class ARMPolicy: CommandBase
 		}
 		catch
 		{
+<<<<<<< HEAD
 			#eat up exception to allow this functionality to run in preview mode and not to hamper exsiting functionality
+=======
+			#eat up exception to allow this functionality to run in preview mode and not to hamper existing functionality
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 		}
 		return $messages;
 		
@@ -472,7 +492,11 @@ class ARMPolicy: CommandBase
 	[string[]] ValidatePolicyConfiguration()
 	{		
 		$NonCompliantObjects = @();
+<<<<<<< HEAD
 		$enabledPolicies = $this.GetApplicableARMPolices() | Where-Object { -not $_.Enabled };
+=======
+		$enabledPolicies = $this.GetApplicableARMPolices() | Where-Object { $_.Enabled };
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 		if($null -ne $this.ARMPolicyObj -and ($enabledPolicies | Measure-Object).Count -gt 0)
 		{
 			$RequiredPolicyDefns = @();			
@@ -521,7 +545,11 @@ class ARMPolicy: CommandBase
 					catch
 					{
 						$NonCompliantObjects += ("Policy Initiative :[" + $initiativeName + "]");
+<<<<<<< HEAD
 						#eat this exception as erroraction is not working
+=======
+						#eat this exception as error action is not working
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 					}
 					if($null -ne $initiative)
 					{
@@ -530,7 +558,11 @@ class ARMPolicy: CommandBase
 							$configuredPolicyDefn = $_;
 							if(($policyDefinitions | Where-Object { $_.policyDefinitionId -eq $configuredPolicyDefn.policyDefinitionId} | Measure-Object).Count -le 0)
 							{
+<<<<<<< HEAD
 								$NonCompliantObjects += ("Policy Initiative :[" + $initiativeName + "]");
+=======
+								$NonCompliantObjects += ("Policy Initiative :[" + $initiativeName + "] -> Definition :[" + $_.policyDefinitionId + "]");
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
 							}
 						}
 					}				

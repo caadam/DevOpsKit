@@ -323,7 +323,11 @@
           "FixControlImpact": "Low"
         },
         "PolicyDefinitionGuid":"752c6934-9bcc-4749-b004-655e676ae2ac",
+<<<<<<< HEAD
         "PolicyDefnResourceIdSuffix": "/config/web"
+=======
+        "PolicyDefnResourceIdSuffix": "config/web"
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
       },
       {
         "ControlID": "Azure_AppService_BCDR_Configure_Auto_Healing",

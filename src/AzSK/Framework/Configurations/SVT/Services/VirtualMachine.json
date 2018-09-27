@@ -18,7 +18,12 @@
             "Automated",
             "Deploy",
             "Windows",
+<<<<<<< HEAD
             "Linux"
+=======
+            "Linux",
+            "ERvNet"
+>>>>>>> 770b15e3c775c34ef190ebe6193d8a97258acc4e
          ],
          "Enabled": true
       },
@@ -38,7 +43,8 @@
             "Config",
             "Windows",            
             "SOX",
-            "SI"
+            "SI",
+            "ERvNet"
          ],
          "Enabled": true
       },
@@ -76,7 +82,8 @@
             "Automated",
             "NetSec",
             "Windows",
-            "Linux"
+            "Linux",
+            "ERvNet"
          ],
          "Enabled": true,
          "DataObjectProperties": [
@@ -101,7 +108,8 @@
             "Automated",
             "DP",
             "Windows",
-            "Linux"
+            "Linux",
+            "ERvNet"
          ],
          "Enabled": true
       },
@@ -141,7 +149,8 @@
             "Windows",
             "SOX",
             "SI",
-            "Linux"
+            "Linux",
+            "ERvNet"
          ],
          "Enabled": true
       },
@@ -160,7 +169,8 @@
             "Automated",
             "Audit",
             "Windows",
-            "Linux"
+            "Linux",
+            "ERvNet"
          ],
          "Enabled": true
       },
@@ -179,7 +189,8 @@
             "Automated",
             "Audit",
             "Windows",
-            "Linux"
+            "Linux",
+            "ERvNet"
          ],
          "Enabled": true
       },
